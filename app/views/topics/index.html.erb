@@ -24,7 +24,9 @@
       <td><%= link_to topic.title, topic %></td>
       <!-- lbe removed <td><%= topic.description %></td> -->
       <td><%= pluralize(topic.votes.count, "vote") %></td>
-      <td><%= button_to '+1', votes_path(topic_id: topic.id), method: :post %></td>
+      <td><%= button_to '+1', topic_votes_path(topic_id: topic.id), method: :post %></td>
+      <!-- added button to subtract a vote for unsure people -->
+      <td><%= button_to '-1ooo', [topic, topic.votes.last] , method: :delete %></td>
       <!--<td><%= link_to 'Show', topic %></td>-->
       <!--<td><%= link_to 'Edit', edit_topic_path(topic) %></td>-->
       <!--<td><%= link_to 'Destroy', topic, confirm: 'Are you sure?', method: :delete %></td>-->

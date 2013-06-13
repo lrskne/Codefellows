@@ -1,8 +1,10 @@
 Suggestotron::Application.routes.draw do
-  resources :votes
+  
 
 
-  resources :topics
+  resources :topics do
+    resources :votes
+  end
   
   root :to => 'topics#index'
 
